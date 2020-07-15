@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <script>
+                  //var................
+            var a = 10;
+            var name = "Bhargav";
+            var data1 = {car:"Swift",company:"MaruthiSuzuki",colour:"Red"}  //object
+            console.log({a,name,data1});
+            {
+                var value = 420;   //initializing var inside block
+            }
+             console.log(value);     //can be used outside the block
+             var value = 400;        //var can be re-initialized
+             console.log(value)
+             
+
+
+
+                //let.................
+            {
+                let num1 = 100;
+                console.log(num1);  // no error
+                
+            }
+            //console.log(num1);  //ERROR because 'let' is used inside the block and cannot be accessed outside
+            let num2 = 100;
+            console.log(num2);  //NO ERROR
+            {
+                num2 = 5000;    //the values can be changed inside the block in let which initialized outside the block
+            }
+            console.log(num2);
+            //let num2 = "abc";     // ERROR let cannot be re-initialized
+
+
+
+
+
+
+
+            //const.....................
+            const ab = 10;
+            //ab = 200;   //ERROR vlue cannot be changed
+            //Once initialized cannot be changed
+
+
+       </script>
+
+
+
+
+    
+</body>
+</html>

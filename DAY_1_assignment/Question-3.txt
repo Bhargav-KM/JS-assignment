@@ -1,0 +1,32 @@
+               ..................DATA TYPES IN JAVASCRIPT.............
+
+               1).  Number
+                      eg:- let num1 = 100;
+                           let num2 = 10.5;
+                           num2 = 10/10;
+                
+                2).  String
+                      eg:- let name1 = "Bhargav";
+                        let name2 = "Shravan";
+                        let name3 = name1 + name2;
+                
+                3).  Object 
+                     eg:- var data1 = {name:"Bhargav",age:20,state:"Karnataka"}
+                          var data2 = {name:"Shravan",age:20,state:"Delhi"}
+                          console.table({data1,data2})
+                4).   Boolean
+                     eg:-  var a = 5
+                           var b = 5
+                           var result = a==b;     //stores true if a is equal to b, stores  false if a is not equal to b 
+                           
+                5).   Arrays
+                         eg:- var cities = ["Bangaluru","Delhi","Hassan","Chikmangalore"]
+                              console.log(cities);
+                    
+                .Undefined:-
+                             eg:- var name;
+                                   console.log(name);   //displays undifined
+                .Null:-
+                        eg:-  var data = null;
+                             
+                        
