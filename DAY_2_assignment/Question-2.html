@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        
+          //String methods
+        let mystring = "Karnataka , India.";
+        document.write(mystring.bold());                // Bolds the string     
+        document.write(mystring.fontcolor("yellow"));     // makes the string color yellow
+        document.write(mystring.fontsize(32));              // makes the font size of string large
+        document.write(mystring.italics());              // makes the string style to italics
+        document.write(mystring.slice(0,5))             //it is going to slice the remaining part except metion position and display 
+        document.write(mystring.substr(0,4))             //it is going to make the substring of mentioned position
+        document.write(mystring.repeat(5));               // prints the string mentioned no. of times
+        console.log(mystring.search("India"));            //prints the index of first letter if found
+        console.log(mystring.normalize())                  //prints normal string without any changes
+
+
+          //Array methods
+
+        let myarry = ["apple","hat","mat","dog",500,100];
+        console.log(myarry) 
+        console.log(myarry.sort())       // sorts the array :numbers first and then alphabets.
+        console.log(myarry.find(Number))  // find the first number in the array and prints
+        console.log(myarry.fill("apple",0,4))    // 0 to 4th position of array is replaced with apple
+        console.log(myarry.push("Berlin"))    //pushes the element into the array and prints the position
+        console.log(myarry.reverse())         //reverse the order of the array
+        console.log(myarry.pop())            //pops out the last element
+        console.log(myarry.unshift("coffee"))  // adds the element tonthe start of the array
+        console.log(myarry)
+
+
+    </script>
+    
+</body>
+</html>
