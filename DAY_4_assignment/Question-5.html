@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+     let salesPer = prompt("Enter total number of sales Persons :");
+     let total = prompt("Enter the Total Amount Earned: ");
+     for(i=1;i<=salesPer;i++)
+     {
+         var sales = prompt(`Enter the sales done by Employee${i}`);
+         if(sales>0 && sales<=5000){
+             console.log(`Commission earned by Employee ${i} = ${(2/100)*total}`)
+         }
+         if(sales>5000 && sales<=10000){
+             console.log(`Commission earned by Employee ${i} = ${(5/100)*total}`)
+         }
+         if(sales>10000 && sales<=20000){
+             console.log(`Commission earned by Employee ${i} = ${(7/100)*total}`)
+         }
+         if(sales>20000){
+             console.log(`Commission earned by Employee ${i} = ${(10/100)*total}`)
+         }
+     }
+     
+
+    </script>
+    
+</body>
+</html>

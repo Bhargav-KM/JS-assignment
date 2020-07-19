@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+      console.log('----CALCULATOR---')
+      let num1 = prompt('Enter first number: ');
+      let num2 = prompt('Enter second number: ');
+      let operand = prompt('Enter the operand symbol: ');
+      switch(operand){
+        case '+' : console.log(`${num1} ${operand} ${num2} = ${num1+num2}`)
+                     break;
+      
+        case '-' : console.log(`${num1} ${operand} ${num2} = ${num1-num2}`)
+                     break;
+        case '*' : console.log(`${num1} ${operand} ${num2} = ${num1*num2}`)
+                     break;
+        case '/' : console.log(`${num1} ${operand} ${num2} = ${num1/num2}`)
+                     break;
+        case 'SR' : console.log(`Square root of ${num1} = ${Math.sqrt(num1)} and Square root of ${num2} = ${Math.sqrt(num2)}`)
+                     break;
+        case '%' : console.log(`${num1} ${operand} ${num2} = ${num1%num2}`)
+                     break;             
+        default: console.log(`Enter operand as + or - or * or / or SR or %`)
+         }
+      
+
+    </script>
+    
+</body>
+</html>
