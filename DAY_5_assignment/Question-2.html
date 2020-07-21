@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+               class User{
+                   constructor(name,age,email){
+                       this.name = name;
+                       this.age = age;
+                       this.email = email;
+                       this.course = [];
+                       this.lucoins = 0;
+                   }
+                    login(){
+
+                    console.log(`${this.name} has logged in..`);
+                       
+                   }
+                   logout(){
+                       console.log(`${this.name} has logged Out`)
+                   }
+
+
+               }
+
+               class Moderator extends User{
+                 
+
+                   addcoins(user,coins){
+                             user.lucoins += coins;
+                             console.log(`Coin Balance of ${user.name}  = ${user.lucoins} coins            (added by ${this.name})`)
+                   }
+                   removecoins(user,coins){
+                       user.lucoins -= coins;
+                       console.log(`Coin Balance of ${user.name}  = ${user.lucoins} coins          (removed by ${this.name}) `)
+                   }
+               }
+
+               class Admin extends Moderator{
+                       
+                   addcourse(user,cour){
+                        user.course.push(cour);
+                        console.log(`Courses taken by ${user.name} = ${user.course}            (added by ${this.name})` )
+                   }
+                   removecourse(user,cour){
+                       user.course.pop(cour);
+                       console.log(`Courses taken by ${user.name} = ${user.course}            (removed by ${this.name})`)
+                   }
+               }
+          
+          
+          //User
+          
+          user1 = new User("Bhargav ",21,"bhargav@gmail.com");
+          user2 = new User("Will Smith",40,"will@gmail.com");
+          user1.login();
+          user2.login();
+          user2.logout();
+          user1.logout();
+
+
+          //Moderators
+
+          mod1 = new Moderator("Alan(moderator)",28,"alan@gmail.com");
+          mod2 = new Moderator("Stark(moderator)",41,"stark@gmail.com");
+          mod1.addcoins(user1,10);
+          mod2.removecoins(user1,3);
+          mod2.addcoins(user2,8);
+
+           
+        //Admins
+
+          admin1 = new Admin("Berlin(admin)",35,"berlin@outlook.com");
+          admin2 = new Admin("Paul(admin)",38,"paul@gmail.com");
+          admin1.addcourse(user1,"Ai-Ml");
+          admin1.addcourse(user1,"Python");
+          admin1.addcourse(user2,"Python");
+          admin2.removecourse(user1,"Ai-Ml");
+          admin2.removecoins(user2,3);
+          
+
+          
+
+    </script>
+    
+</body>
+</html>

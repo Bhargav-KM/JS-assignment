@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let  Myarry = [];
+        let num = null;
+        do{
+              num = prompt("Enter a Number :  ");
+              if(num != null){
+                Myarry.push(Number(num));
+              }
+        }while(num != null)
+        console.log(Myarry)
+
+        let OddArrayCube = Myarry.filter(n=>n%2 != 0).map(a=>a**2);    //Array of cube of Odd numbers.
+        console.log(OddArrayCube);
+
+
+
+    </script>
+</body>
+</html>
