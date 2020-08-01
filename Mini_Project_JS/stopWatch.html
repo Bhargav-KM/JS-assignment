@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Stopwatch</title>
+    <style>
+        #tim{
+            font-weight: bold;
+            font-size: 150px;
+            color:rgb(8, 3, 48);
+            text-align: center;
+            margin-top: 80px;
+            border: 30px solid rgb(105, 84, 84);
+            
+        }
+        #bb {
+            text-align: center;
+            margin:80px;
+        }
+        .butto {
+            font-weight: bold;
+            margin: 20px;
+            font-size: 50px;
+            padding: 10px;
+            border: 5px solid;
+            } 
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+<body onload="show();">
+	<div id="tim"><span id="time"></span></div>
+	<div id="bb"><input type="button" value="START" onclick="start();" class="butto">
+	<input type="button" value="STOP" onclick="stop();" class="butto">
+    <input type="button" value="RESET" onclick="reset()" class="butto"></div>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       <script>
+                        var	clsStopwatch = function() {
+                        
+                        var	startAt	= 0;	
+                        var	lapTime	= 0;	
+
+                        var	now	= function() {
+                                return (new Date()).getTime(); 
+                            }; 
+                
+                        
+                        this.start = function() {
+                                startAt	= startAt ? startAt : now();
+                            };
+
+                       
+                        this.stop = function() {
+                                
+                                lapTime	= startAt ? lapTime + now() - startAt : lapTime;
+                                startAt	= 0; // Paused
+                            };
+
+                     
+                        this.reset = function() {
+                                lapTime = startAt = 0;
+                            };
+
+                        // Duration
+                        this.time = function() {
+                                return lapTime + (startAt ? now() - startAt : 0); 
+                            };
+                    };
+
+                var x = new clsStopwatch();
+                var $time;
+                var clocktimer;
+
+                function pad(num, size) {
+                    var s = "0000" + num;
+                    return s.substr(s.length - size);
+                }
+
+                function formatTime(time) {
+                    var h = m = s = ms = 0;
+                    var newTime = '';
+
+                    h = Math.floor( time / (60 * 60 * 1000) );
+                    time = time % (60 * 60 * 1000);
+                    m = Math.floor( time / (60 * 1000) );
+                    time = time % (60 * 1000);
+                    s = Math.floor( time / 1000 );
+                    ms = time % 1000;
+
+                    newTime = pad(h, 2) + ':' + pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms, 3);
+                    return newTime;
+                }
+
+                function show() {
+                    $time = document.getElementById('time');
+                    update();
+                }
+
+                function update() {
+                    $time.innerHTML = formatTime(x.time());
+                }
+
+                function start() {
+                    clocktimer = setInterval("update()", 1);
+                    x.start();
+                }
+
+                function stop() {
+                    x.stop();
+                    clearInterval(clocktimer);
+                }
+
+                function reset() {
+                    stop();
+                    x.reset();
+                    update();
+                }
+        </script>
+
+        
+</body>
+</html>
